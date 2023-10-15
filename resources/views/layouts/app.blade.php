@@ -15,7 +15,8 @@
     <script src="/js/scripts.js"></script>
 </head>
 <body>
-@if(session('auth'))
+
+@if(Auth::user())
     <div id="app">
         <nav class="">
             <div class="container">

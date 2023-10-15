@@ -11,34 +11,34 @@ class LinksController extends Controller
 {
     public function addlinks(LinksRequest $request)
     {
-        $links = new Links();
-        $links->youtube = $request->input('youtube');
-        $links->email = $request->input('email');
-        $links->instagram = $request->input('instagram');
-        $links->facebook = $request->input('facebook');
-        $links->vk = $request->input('vk');
-        $links->save();
+        if ($request->new_social && $request->new_url) {
+            $link = new Links();
+            $link->name = $request->input('new_social');
+            $link->link = $request->input('new_url');
+            $link->save();
+        }
+       // dd($request->all());
+        if (isset($request->name) & count($request->name) > 0) {
+            foreach ($request->name as $key=>$value) {
+                $link = Links::query()->where('id', $key)->first();
+                if ($link) {
+                    $link->name = $value;
+                    $link->link = $request->link[$key];
+                    $link->save();
+                }
+            }
+        }
+        //dd($request->all());
         return redirect()->route('home');
     }
 
     public function getData(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $links = DB::table('links')->get();
+        $links = Links::query()->get();
         return view('home', ['links' => $links]);
-        ;
+
     }
 
-    public function updatelinks($id, LinksRequest $request)
-    {
-        $links = Links::find($id);
-        $links->youtube = $request->input('youtube');
-        $links->email = $request->input('email');
-        $links->instagram = $request->input('instagram');
-        $links->facebook = $request->input('facebook');
-        $links->vk = $request->input('vk');
-        $links->save();
-        return redirect()->route('home');
-    }
     public function deleteEvent($id): \Illuminate\Http\RedirectResponse
     {
         Links::find($id)->delete();

@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //pages
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/photo', function () {
     return view('photo');
@@ -54,7 +52,6 @@ Route::get('/login', function () {
 //_______________________________________________
 //home
 Route::post('home/submit', [\App\Http\Controllers\LinksController::class, 'addLinks'])->name('add-links');
-//Route::post('home/submit', [\App\Http\Controllers\LinksController::class, 'updateLinks'])->name('update-links');
 Route::get('home', [\App\Http\Controllers\LinksController::class, 'getData'])->name('get-data');
 
 //_______________________________________________

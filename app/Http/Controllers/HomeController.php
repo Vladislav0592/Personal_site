@@ -29,7 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/home');
+        $links=Links::query()->get();
+        return view('/home', [
+            'links'=>$links??collect()
+        ]);
     }
 
 }
