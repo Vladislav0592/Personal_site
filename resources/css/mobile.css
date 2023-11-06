@@ -1,0 +1,39 @@
+@media (max-width: 880px) {
+    #secondHeader {
+        display: block;
+        position: fixed;
+    }
+    #absolute-div{
+        position: absolute;
+        margin-top: -30px;
+    }
+    .home {
+        height: 1000px;
+        width: 100%;
+        background-image: url('/img/photo/2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 5%;
+        color: #cbd5e0;
+    }
+    .letter {
+        letter-spacing: 7px;
+        text-decoration: none;
+        color: #1a202c;
+        transition-duration: 1s;
+        transition: 0.1s;
+        margin-left: auto;
+        margin-right: auto;
+        font: italic 2vw "Fira Sans", serif;
+    }
+    .div-concert {
+        float: left;
+        width: auto;
+        height: 5%;
+        text-align: justify;
+        margin: 0 140px 140px 0;
+        font: italic 2.5vw "Fira Sans", serif;
+        cursor: default;
+    }
+}
