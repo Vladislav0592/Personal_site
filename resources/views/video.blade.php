@@ -5,27 +5,15 @@
 @endsection
 
 @section('preview')
-    <header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4">
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0  letter">
-            <li><a href="/" class=" nav-link px-5  text-dark letter">Home</a></li>
-            <li><a href="/photo" class="nav-link px-5 link-secondary  text-dark letter ">Photo</a></li>
-            <li><a href="/video" class="nav-link px-5 link-secondary text-dark letter ">Video</a></li>
-            <li><a href="/concerts" class="nav-link px-5 link-secondary text-dark letter ">Concerts</a></li>
-            <li><a href="{{route('biography')}}" class="nav-link px-5 link-dark letter">Biography</a></li>
-            <li><a href="{{route('reviews')}}" class="nav-link px-5 link-secondary text-dark letter">Reviews</a></li>
-            <li><a href="{{route('contacts')}}" class="nav-link px-5 text-dark letter">Contacts</a></li>
-            @if(session('auth'))
-                <li><a href="{{route('all_messages')}}" class="nav-link px-5 text-dark letter">Messages</a></li>
-            @endif
-        </ul>
-    </header>
-    <div>
-        <img class="video" src='/img/bg/video_bg.png' alt="img_video">
+ @include('inc.header2')
+    <div  >
+        <img class="video" src='/img/bg/video_bg.webp' alt="img_video">
     </div>
+
 @endsection
 
 @section('content')
-    <div class="content">
+
         <div class="video_block">
             @foreach($videos as $video)
                 <div class="thumb-wrap ">
@@ -35,7 +23,7 @@
                     <div class="text-video-about">{{$video->description}} </div>
                 </div>
                 @if(session('auth'))
-                    <div class="div-video-btn" >
+                    <div class="div-video-btn">
                         <a href="{{route('video-one-form', $video->id)}}">
                             <button type="submit" class="power-button btn btn-info">Update</button>
                         </a>
@@ -48,6 +36,7 @@
             @if(session('auth'))
                 <div class="div-form">
                     <form action="{{route('video-form')}}" method="post">
+                        @include('inc.messages')
                         @csrf
                         <div class="mb-4">
                             <textarea class="form-control" name="link" placeholder="enter link"></textarea>
@@ -59,5 +48,5 @@
                 </div>
             @endif
         </div>
-    </div>
+
 @endsection

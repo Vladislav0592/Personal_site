@@ -18,10 +18,6 @@
                 <li><a href="{{route('all_messages')}}" class="nav-link px-5 link-light letter">Messages</a></li>
             </ul>
         </header>
-        <div class="text_preview">
-
-
-        </div>
         @endsection
         @section('content')
             <div class="content">

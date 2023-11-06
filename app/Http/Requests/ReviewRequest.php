@@ -24,7 +24,7 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'review-form' => 'required|min:4 |max: 500'
+            //'review.form' => 'required'
         ];
     }
     public function messages(){

@@ -36,4 +36,16 @@
         font: italic 2.5vw "Fira Sans", serif;
         cursor: default;
     }
+    .div-review {
+        float: left;
+        width: auto;
+        height: 5%;
+        text-align: justify;
+        margin: 0 120px 120px 0;
+        font: italic 2vw "Fira Sans", serif;
+        cursor: default;
+    }
+    #logo-m{
+        margin-top: 50%;
+    }
 }

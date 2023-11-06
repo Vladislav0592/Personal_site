@@ -1,0 +1,394 @@
+@media (max-width: 600px) {
+    #secondHeader {
+        display: block;
+        position: fixed;
+    }
+
+    #div-header-2 {
+        position: fixed;
+    }
+    .div-header-2 {
+        position: fixed;
+        margin-top: -35px;
+    }
+
+    .foot {
+        height: auto;
+    }
+
+    .home {
+        height: 1000px;
+        width: 100%;
+        background-image: url('/img/photo/2.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 5%;
+        color: #cbd5e0;
+    }
+    .concerts {
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        width: 100%;
+        background-image: url('/img/bg/concerts_bg.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 5%;
+        color: #cbd5e0;
+    }
+    .description-concert{
+        font: italic 5vw "Fira Sans", serif;
+    }
+    .time{
+        font: small-caps 7vw "Fira Sans", serif;
+    }
+    .event-h2{
+        font: small-caps 7vw "Fira Sans", serif;
+    }
+    .text_preview_home {
+        margin-top: 80%;
+        margin-left: 10%;
+        font: italic 2vw "Fira Sans", serif;
+        color: #e2e8f0;
+        cursor: default;
+    }
+
+    #heading-1 {
+        font: italic 10vw "Fira Sans", serif;
+    }
+
+    #heading-2 {
+        font: italic 6vw "Fira Sans", serif;
+    }
+
+    .letter {
+        letter-spacing: 7px;
+        text-decoration: none;
+        color: #1a202c;
+        transition-duration: 1s;
+        transition: 0.1s;
+        margin-left: auto;
+        margin-right: auto;
+        font: italic 3.5vw "Fira Sans", serif;
+    }
+
+    .div-concert {
+        width: 90%;
+        height: 5%;
+        text-align: justify;
+        margin: 0 150px 150px 0;
+        cursor: default;
+    }
+
+    .div-review {
+        float: left;
+        width: auto;
+        height: 5%;
+        text-align: justify;
+        margin: 0 120px 120px 0;
+        font: italic 2vw "Fira Sans", serif;
+        cursor: default;
+    }
+
+    .photo {
+        height: 1000px;
+        width: 100%;
+        background-image: url('/img/bg/photoM.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 5%;
+        color: #cbd5e0;
+    }
+
+    #logo-m {
+        display: none;
+    }
+
+    .photo-galereya-hor {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+    }
+
+    .photo-galereya-vert {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+
+    }
+
+    .photo-galereya-vert-2 {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+        margin-top: 3%;
+    }
+
+    .photo-galereya-hor-2 {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+        margin-top: 3%;
+    }
+
+    .photo-galereya-vert-3 {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+        margin-top: 2%;
+    }
+
+    .photo-galereya-hor-3 {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+        margin-top: 3%;
+    }
+
+    .photo-galereya-hor-4 {
+        padding: 5px;
+        width: 95%;
+        height: auto;
+        margin-top: 2%;
+    }
+
+    .div-photo {
+        margin-left: 5%;
+        margin-top: 25%;
+        height: auto;
+        width: auto;
+    }
+
+    .video {
+        max-height: max-content;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-position-y: 50%;
+        color: #cbd5e0;
+        border: solid 3px black;
+    }
+
+    .thumb-wrap {
+        position: relative;
+        padding: 1%;
+        /* padding-bottom: 50%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%)*/
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+    }
+
+    .thumb-wrap iframe {
+        width: 90%;
+        border-width: 0;
+        outline-width: 0;
+    }
+
+    .text-video-about {
+        margin-left: 20%;
+        margin-top: 40%;
+        width: 100%;
+        height: auto;
+        font: italic 2.5vw "Fira Sans", serif;
+        cursor: default;
+    }
+
+    .biography {
+        height: 1000px;
+        background-image: url('/img/bg/biography_bg_m.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 5%;
+        background-attachment: local;
+        color: #cbd5e0;
+    }
+
+    .biography-form-1 {
+        width: 90%;
+        height: 50%;
+        margin-left: 5%;
+        padding: 2%;
+        font: italic 4vw "Fira Sans", serif;
+        text-align: justify;
+        cursor: default;
+    }
+
+    .biography-form-2 {
+        width: 90%;
+        height: 50%;
+        padding: 2%;
+        margin-top: -10%;
+        margin-left: 5%;
+        font: italic 4vw "Fira Sans", serif;
+        text-align: justify;
+        cursor: default;
+    }
+
+    .div-biography {
+        margin-top: 10%;
+        margin-left: -10%;
+        height: 1px;
+        width: auto;
+    }
+
+    #photo-bio-1 {
+        display: none;
+    }
+
+    .reviews {
+        height: 1000px;
+        width: 100%;
+        background-image: url('/img/bg/review_bg_m.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 30%;
+        background-attachment: local;
+        color: #cbd5e0;
+    }
+
+    .div-form-review {
+        width: 80%;
+        margin-top: 130%;
+        margin-left: 20%;
+    }
+
+    .text-area-review {
+        height: 50px;
+    }
+
+    .div-review {
+        width: 100%;
+        height: auto;
+        text-align: justify;
+        font: italic 3vw "Fira Sans", serif;
+        cursor: default;
+        margin-left: -10%;
+    }
+    .video_block {
+        margin-left: 10%;
+        margin-right: auto;
+        margin-top: 5%;
+    }
+
+
+    .contacts {
+        height: 1000px;
+        width: 100%;
+        background-image: url('/img/bg/1_m.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-position-y: 5%;
+        background-attachment: local;
+        color: #cbd5e0;
+    }
+
+    .form-contacts {
+        width: 80%;
+        margin-top: 90%;
+    }
+
+    .div-logo {
+        display: none;
+    }
+
+    .logo {
+        margin-top: 40%;
+        display: block;
+        max-width: 2%;
+        max-height: 2%;
+        position: absolute;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 65%;
+        margin-left: 5%;
+
+    }
+
+    .form-contacts {
+        width: 80%;
+        margin-top: 80%;
+    }
+    .m-div-logo{
+        margin-top: -40%;
+    }
+}
+
+@media (max-width: 630px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 80%;
+        margin-left: 5%;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 110%;
+        margin-left: 5%;
+
+    }
+
+    .form-contacts {
+        width: 80%;
+        margin-top: 110%;
+    }
+}
+
+@media (max-width: 480px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 150%;
+        margin-left: 5%;
+
+    }
+}
+
+@media (max-width: 420px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 145%;
+        margin-left: 5%;
+    }
+
+    .form-contacts {
+        width: 80%;
+        margin-top: 150%;
+    }
+}
+
+@media (max-width: 380px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 190%;
+        margin-left: 5%;
+
+    }
+}
+
+@media (max-width: 330px) {
+    .div-form-review {
+        width: 80%;
+        margin-top: 210%;
+        margin-left: 5%;
+    }
+
+    .form-contacts {
+        width: 80%;
+        margin-top: 200%;
+    }
+}
+

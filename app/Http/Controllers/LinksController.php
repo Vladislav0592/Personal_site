@@ -28,7 +28,6 @@ class LinksController extends Controller
                 }
             }
         }
-        //dd($request->all());
         return redirect()->route('home');
     }
 

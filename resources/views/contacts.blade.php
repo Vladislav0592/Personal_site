@@ -5,48 +5,35 @@
 @endsection
 
 @section('preview')
-    <div class="contacts">
-        <header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4">
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 letter">
-                <li><a href="{{route('home')}}" class="nav-link px-5 text-light letter">Home</a></li>
-                <li><a href="{{route('photo')}}" class="nav-link px-5 text-light letter">Photo</a></li>
-                <li><a href="{{route('video')}}" class="nav-link px-5 text-light letter">Video</a></li>
-                <li><a href="{{route('concerts')}}" class="nav-link px-5 text-light letter">Concerts</a></li>
-                <li><a href="{{route('biography')}}" class="nav-link px-5 link-light letter">Biography</a></li>
-                <li><a href="{{route('reviews')}}" class="nav-link px-5 text-light letter">Reviews</a></li>
-                <li><a href="{{route('contacts')}}" class="nav-link px-5 text-light letter">Contacts</a></li>
-                @if(session('auth'))
-                    <li><a href="{{route('all_messages')}}" class="nav-link px-5 text-light light ">Messages</a></li>
-                @endif
-            </ul>
-        </header>
+    <div class={{\Request::route()->getName()}}>
+        @include('inc.header')
+        <div class="div-logo m-div-logo">
+            <img src='/img/logo.svg' alt="" id="logo-m">
+        </div>
         <div class="text_preview">
             <div class="form-contacts">
-                @include('inc.messages')
-                <form action="" method="get">
+                <form id="formContacts">
                     @csrf
                     <div class="form-floating mb-3">
                         <input class="form-control" name="name" type="text" placeholder="Leave your name"
-                               id="floatingTextareaDisabled">
+                               id="name">
                         <label for="floatingTextareaDisabled">Name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" name="email" class="form-control" id="floatingInputDisabled"
-                               placeholder="name@example.com">
-                        <label for="floatingInputDisabled">Email address</label>
+                        <input type="text" name="contacts" class="form-control" id="contacts"
+                               placeholder="email or phone">
+                        <label for="floatingInputDisabled">Email or phone</label>
                     </div>
                     <div class="form-floating mb-3">
-                    <textarea class="form-control" name="message" placeholder="Leave a comment here"
-                              id="floatingTextarea2Disabled"
+                    <textarea class="form-control" name="message" placeholder="Leave a message here"
+                              id="message"
                               style="height: 100px"></textarea>
-                        <label for="floatingTextarea2Disabled">Comments</label>
+                        <label for="floatingTextarea2Disabled">Message</label>
                     </div>
-                    <button type="submit" class="btn btn-light">send</button>
+                    <button type="submit" class="btn btn-light" id="sendContact">send</button>
                 </form>
             </div>
-        </div>
-        <div class="div-logo">
-            <img src='/img/logo.svg' alt="" width="200px" height="200px">
+
         </div>
     </div>
 
@@ -54,5 +41,24 @@
 @endsection
 
 @section('content')
+    @if(Auth::user())
+        <div class="content">
+            <div class="container mb4">
+                @foreach($emails as $email)
+                    <div style="padding: 15px">
+                        <div class="alert alert-info">
+                            <h4>{{ $email -> created_at }}</h4>
+                            <h4>{{ $email -> name }}</h4>
+                            <h4>{{$email->contacts}}</h4>
+                            <span>{{ $email -> text }}</span>
+                        </div>
+                        <a href="{{route('delete-email', $email->id)}}">
+                            <button class="power-button btn btn-danger" name="delete">Delete</button>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endif
 
 @endsection

@@ -11,7 +11,7 @@
                     <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
                     <li><a href="/photo" class="nav-link px-2 text-white">Photo</a></li>
                     <li><a href="/video" class="nav-link px-2 text-white">Video</a></li>
-                    <li><a href="/review" class="nav-link px-2 text-white">Review</a></li>
+                    <li><a href="/reviews" class="nav-link px-2 text-white">Review</a></li>
                     <li><a href="/concerts" class="nav-link px-2 text-white">Concerts</a></li>
                 </ul>
                 <div class="text-end">

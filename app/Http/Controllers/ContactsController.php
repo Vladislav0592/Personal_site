@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactsRequest;
 use App\Mail\Letters;
+use App\Models\Emails;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Envelope;
@@ -14,13 +15,28 @@ use App\Models\Contacts;
 
 class ContactsController extends Controller
 {
-    public function sendingMessage(ContactsRequest $request)
+    public function createEmail(ContactsRequest$request): \Illuminate\Http\RedirectResponse
     {
-        $recipient=DB::table('links')->select('email')->get();
-        $data = new Contacts();
-        $name = $data->name = $request->input('name');
-        $email = $data->email = $request->input('email');
-        $message = $data->message = $request->input('message');
-        Mail::to($recipient)->send(new Letters($name, $email, $message))->with('success', 'Thanks for your email!');
+        $email = new Emails();
+        $email->name = $request->input('name');
+        $email->contacts = $request->input('contacts');
+        $email->text = $request->input('message');
+        $message=[$email->name,$email->contacts, $email->text];
+        $result=implode(' ; ', $message);
+
+        Mail::raw( $result, fn ($message)=> $message->to("evgenebaev@gmail.com"));
+        $email->save();
+        return redirect()->route('contacts')->with('success', 'Your letter has been sent!');
+    }
+
+    public function getEmail(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $emails= Emails::query()->orderBy('id', 'desc')->get();
+        return view('contacts', ['emails'=>$emails]);
+    }
+    public function deleteEmail($id)
+    {
+        Emails::find($id)->delete();
+        return redirect()->route('contacts');
     }
 }

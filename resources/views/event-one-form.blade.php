@@ -27,14 +27,17 @@
                 <form action="{{route('update-event', $concert->id)}}" method="post">
                     @csrf
                     <div class="mb4">
-                        <input class="form-control px-5 " type="text" name="date" placeholder="date" value="{{$concert->date}}"/>
+                        <input class="form-control px-5 " type="date" name="date" placeholder="date" value="{{$concert->date}}"/>
                         <br>
-                        <input class="form-control px-5 " type="text" name="time" placeholder="time" value="{{$concert->time}}"/>
+                        <input class="form-control px-5 " type="time" name="time" placeholder="time" value="{{$concert->time}}"/>
                         <br>
                         <input class="form-control px-5" type="text" name="address" placeholder="address" value="{{$concert->address}}"/>
                         <br>
                         <textarea class="form-control px-5 " name="description"
                                   placeholder="description">{{$concert->description}}</textarea>
+                        <br>
+                        <input class="form-control px-5 " type="text" name="contacts"
+                               placeholder="Телефон для справок" value="{{$concert->contacts}}"/>
                         <br>
                         <button type="submit" class="btn btn-success">update</button>
                     </div>

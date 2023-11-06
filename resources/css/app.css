@@ -1,12 +1,19 @@
-html{
+@media (min-width: 601px) {
+    #firstHeader {
+        display: block;
+    }
+    .logo{
+        display: none;
+    }
+}
+html {
 
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }
 
-body
-{
+body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -15,36 +22,46 @@ body
 
 .text_head {
     color: #050505;
-
 }
 
 .home {
-    height: 1000px;
+    max-height: 80%;
     width: 100%;
-    background-image: url('/img/bg/bg.png');
+    background-image: url('/img/bg/bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     background-position-y: 5%;
     color: #cbd5e0;
-
 }
 
 .photo {
-    height: 1000px;
+    height: 80%;
     width: 100%;
-    background-image: url('/img/bg/photo_bg.png');
+    background-image: url('/img/bg/photo_bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     background-position-y: 5%;
+    background-attachment: local;
+    color: #cbd5e0;
+}
+.biography {
+    max-height: 80%;
+    background-image: url('/img/bg/biography_bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-position-y: 5%;
+    background-attachment: local;
     color: #cbd5e0;
 }
 
-.review {
-    height: 1000px;
+
+.reviews {
+    max-height: 85%;
     width: 100%;
-    background-image: url('/img/bg/review_bg.png');
+    background-image: url('/img/bg/review_bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -52,10 +69,11 @@ body
     background-attachment: local;
     color: #cbd5e0;
 }
+
 .contacts {
-    height: 1000px;
+    max-height: 80%;
     width: 100%;
-    background-image: url('/img/bg/1.png');
+    background-image: url('/img/bg/1.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -64,20 +82,10 @@ body
     color: #cbd5e0;
 }
 
-.biography {
-    height: 1000px;
-    background-image: url('/img/bg/biography_bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    background-position-y: 5%;
-    background-attachment: local;
-    color: #cbd5e0;
-}
 
 .video {
-    height: 25%;
-    width: 65%;
+    max-height: 25%;
+    max-width: 65%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -100,19 +108,25 @@ body
 .concerts {
     height: auto;
     width: 100%;
-    background-image: url('/img/bg/concerts_bg.png');
+    background-image: url('/img/bg/concerts_bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     background-position-y: 5%;
     color: #cbd5e0;
 }
+
 .text_preview_home {
-    margin-top: 20%;
+    margin-top: 17%;
     margin-left: 10%;
-    font: italic 1.2rem "Fira Sans", serif;
     color: #e2e8f0;
     cursor: default;
+}
+#heading-1{
+    font: italic 6vw "Fira Sans", serif;
+}
+#heading-2{
+    font: italic 3vw "Fira Sans", serif;
 }
 .text_preview {
     margin-top: 20%;
@@ -122,13 +136,15 @@ body
     height: 500px;
     cursor: default;
 }
+
 .review-page {
     margin-top: 20%;
     margin-left: 15%;
-    font: italic 1.2rem "Fira Sans", serif;
+    font: italic 1.2vw "Fira Sans", serif;
     color: #e2e8f0;
     cursor: default;
 }
+
 .letter {
     letter-spacing: 7px;
     text-decoration: none;
@@ -138,7 +154,7 @@ body
     transition: 0.1s;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1vw;
+    font: italic 1.5vw "Fira Sans", serif;
 }
 
 .letter :hover {
@@ -178,16 +194,18 @@ body
     margin-left: 50%;
     width: 30%;
     height: 15%;
-    font: italic 1.2rem "Fira Sans", serif;
-    font-size: 1vw;
+    font: italic 1.5vw "Fira Sans", serif;
     cursor: default;
 }
 
-.form-reviews {
-    margin-left: 30%;
+.div-form-review{
+    width: 40%;
     margin-top: 15%;
-    height: 100%;
-    width: 100%;
+    margin-left: 100%;
+
+}
+.text-area-review{
+    height: 200px
 }
 
 .form-biography {
@@ -366,8 +384,11 @@ body
 
 .div-logo {
     margin-top: -9%;
+    width: 200px;
+    height: 200px;
 
 }
+
 .col-25 {
     float: left;
     width: 25%;
@@ -379,18 +400,32 @@ body
     width: 30%;
     margin-left: 60%;
 }
+
 img {
     display: inline-block;
     height: auto;
     max-width: 100%;
 }
 
-#bio-img{
+#bio-img {
     display: inline-block;
     height: auto;
     max-width: 100%;
     float: left;
 }
-.form-contacts{
+
+.form-contacts {
     width: 30%;
 }
+
+.hidden {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+#logo-m{
+    margin-top: 40%;
+}
+
+
+

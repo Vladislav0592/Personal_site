@@ -24,7 +24,16 @@ class AddReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'add-review' => 'min:3 |max: 1000'
+            'date' => 'required|min:1 |max: 20',
+            'text' => 'required|min:1 |max: 1000',
+
         ];
+    }
+    public function messages(){
+        return[
+            'date.required'=>'Поле "Дата" не заполнил. Не халтурь',
+            'text.required'=>'Поле "Текст" не заполнил. Не халтурь',
+        ];
+
     }
 }

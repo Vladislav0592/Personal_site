@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class ReviewController extends Controller
 {
-    public function submit(ReviewRequest $request)
+    public function submit(ReviewRequest $request): \Illuminate\Http\RedirectResponse
     {
         $review = new Review();
-        $review->review = $request->input('review-form');
+        $review->review = $request->review;
         $review->save();
 
         return redirect()->route('reviews')->with('success', 'Thanks for your feedback!');

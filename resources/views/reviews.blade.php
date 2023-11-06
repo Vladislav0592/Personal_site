@@ -5,45 +5,30 @@
 @endsection
 
 @section('preview')
-    <div class="review">
-        <header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4">
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 letter">
-                <li><a href="{{route('home')}}" class="nav-link px-5 link-light letter">Home</a></li>
-                <li><a href="{{route('photo')}}" class="nav-link px-5 link-light letter">Photo</a></li>
-                <li><a href="{{route('video')}}" class="nav-link px-5 link-light letter">Video</a></li>
-                <li><a href="{{route('concerts')}}" class="nav-link px-5 link-light letter">Concerts</a></li>
-                <li><a href="{{route('biography')}}" class="nav-link px-5 link-light letter">Biography</a></li>
-                <li><a href="{{route('reviews')}}" class="nav-link px-5 link-light letter">Reviews</a></li>
-                <li><a href="{{route('contacts')}}" class="nav-link px-5 text-light letter">Contacts</a></li>
-                @if(session('auth'))
-                    <li><a href="{{route('all_messages')}}" class="nav-link px-5 text-light letter">Messages</a></li>
-                @endif
-            </ul>
-        </header>
-        <div class="review-page" > </div>
-        <div class="content">
-            <div class="">
-                <div class="container">
-                    <form action="{{route('review-form')}}" method="post">
-                        @csrf
-                        <div class="mb-4">
-                            <div class="col-75">
-                                @include('inc.messages')
-                                <label for="exampleFormControlTextarea1" id="review" class="label-reviews"
-                                       style="margin-right: 15%">You can leave your
-                                    review</label>
-                                <textarea name="review-form" class="form-control" id="exampleFormControlTextarea1"
-                                          placeholder="Enter text" style="width: 100%;"></textarea>
-                                <button type="submit" class="btn btn-light" style="margin-top: 5px">send</button>
-                            </div>
+    <div class={{\Request::route()->getName()}}>
+        @include('inc.header')
+        <div class="col-md-8">
+            <div class="div-form-review">
+                <form id="form">
+                    @csrf
+                    <div class="mb-4">
+                        <div class="">
+                            <label id="labelReview" class="label-reviews"
+                                   style="margin-right: 15%">You can leave your
+                                review</label>
+                            <textarea name="review" class="text-area-review form-control"
+                                      id="review"
+                                      placeholder="Enter text" minlength="4" maxlength="500" required></textarea>
+                            <button  id="sendReview" type="submit" class="btn btn-light" style="margin-top: 5px" >send</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-    <div class="">
-        <img src='/img/logo.svg' alt="" width="200px" height="300px" style="margin-top: -15%">
+        <div class="div-logo" style="margin-top: 3%">
+            <img src='/img/logo.svg' alt="" id="logo-m">
+        </div>
+
     </div>
 @endsection
 @section('content')
@@ -89,3 +74,4 @@
         <div style="width:100%; height:1px; clear:both;"></div>
     </div>
 @endsection
+

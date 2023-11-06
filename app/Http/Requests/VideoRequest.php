@@ -25,7 +25,16 @@ class VideoRequest extends FormRequest
     public function rules()
     {
         return [
+            'description' => 'required|min:1 |max: 1000',
+            'link' => 'required|min:1 |max: 1000',
 
         ];
+    }
+    public function messages(){
+        return[
+            'description.required'=>'Поле "Описание" не заполнил. Не халтурь',
+            'link.required'=>'Поле Link" не заполнил. Не халтурь',
+        ];
+
     }
 }

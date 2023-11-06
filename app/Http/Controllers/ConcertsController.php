@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ConcertsRequest;
 use App\Models\Concerts;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 
@@ -17,6 +18,7 @@ class ConcertsController extends Controller
         $concert->time = $request->input('time');
         $concert->address = $request->input('address');
         $concert->description = $request->input('description');
+        $concert->contacts = $request->input('contacts');
 
         $concert->save();
 
@@ -25,9 +27,10 @@ class ConcertsController extends Controller
 
     public function getDataConcerts(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $concert = Concerts::orderBy('id', 'asc')->get();
+        $concert = Concerts::orderBy('date', 'asc')->get();
         return view('concerts', ['concerts' => $concert]);
     }
+
     public function showEventForm($id): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $concert = DB::table('concerts')->find($id);
@@ -42,6 +45,7 @@ class ConcertsController extends Controller
         $concert->time = $request->input('time');
         $concert->address = $request->input('address');
         $concert->description = $request->input('description');
+        $concert->contacts = $request->input('contacts');
 
         $concert->save();
         return redirect()->route('concerts');
