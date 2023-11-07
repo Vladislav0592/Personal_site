@@ -64,10 +64,13 @@ Route::get('home', [\App\Http\Controllers\LinksController::class, 'getData'])->n
 //review
 Route::controller(\App\Http\Controllers\ReviewController::class)->group(function () {
     Route::post('/reviews/submit', 'submit')->name('review.form');
+});
+//_______________________________________________
+//messages
+Route::controller(\App\Http\Controllers\MessageController::class)->group(function () {
     Route::get('/all_messages', 'allData')->name('all_messages');
     Route::get('/all_messages/{id}/delete', 'deleteMessage')->name('delete-message');
 });
-
 //_______________________________________________
 //video
 Route::controller(\App\Http\Controllers\VideoController::class)->group(function () {

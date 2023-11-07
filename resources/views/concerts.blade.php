@@ -43,7 +43,7 @@
         @endforeach
 
 
-        @if(session('auth'))
+        @if('auth')
             <div class="div-form border border-0">
                 <form action="{{route('create-event')}}" method="post">
                     @csrf
